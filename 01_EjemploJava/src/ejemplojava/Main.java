@@ -5,6 +5,8 @@
  */
 package ejemplojava;
 
+import pkg.ProbandoString;
+
 
 /**
  *
@@ -21,24 +23,26 @@ public class Main {
         c.nivel_deposito= 3; 
         System.out.println("Deposito vaciado de: " + c.marca + "\n Nivel: " + c.nivel_deposito );
     }*/
-    public static void main(String[] args) {
+     public static void main(String[] args) {
+         ProbandoString.tratarCadena();
+     }
+    public static void main2(String[] args) {
         
         System.out.println("Empezando POO");
         Coche miCoche; 
         
         
-        miCoche= new Coche("Ford", Coche.TipoCarburante.GASOLINA ,100, Coche.TipoColor.AZUL); 
+        miCoche= new Coche("Ford", Coche.TipoCarburante.GASOLINA , Coche.TipoColor.AZUL); 
   
         
         System.out.println("Marca de Vehículo: " +  miCoche.getMarca());
         System.out.println("Nº Ruedas: " + miCoche.getRuedas());
         System.out.println("Capacidad Depósito: " + miCoche.getLitros_deposito() + " litros");
-        System.out.println("Nivel Depósito: " + miCoche.getNivelGasolina() + " litros");
         System.out.println("¿Es de Gasolina?: " + miCoche.getCarburante() + "\n");
         
         Coche otroCoche; 
 
-        otroCoche= new Coche("Mercedes",Coche.TipoCarburante.DIESEL ,80, "PLATEADO"); 
+        otroCoche= new Coche("Mercedes",Coche.TipoCarburante.DIESEL , "PLATEADO"); 
   /*      otroCoche.marca="Mercedes"; 
         otroCoche.ruedas=4; 
         otroCoche.litros_deposito=80; 
@@ -48,7 +52,6 @@ public class Main {
         System.out.println("Marca de Vehículo: " +  otroCoche.getMarca());
         System.out.println("Nº Ruedas: " + otroCoche.getRuedas());
         System.out.println("Capacidad Depósito: " + otroCoche.getLitros_deposito()+ " litros");
-        System.out.println("Nivel Depósito: " + otroCoche.getNivelGasolina() + " litros");
         System.out.println("¿Es de Gasolina?: " + otroCoche.getCarburante());
         System.out.println("Color: " + otroCoche.getColores() + "\n");
         
@@ -70,7 +73,29 @@ public class Main {
             miCoche.acelerar();
             miCoche.mostrarEstado();
         }
+        
+        CocheRally cocheRally;
+        String datosCocheRally; 
+        
+        cocheRally= new CocheRally("Supra", Coche.TipoCarburante.GASOLINA, "ROJO", 5.2f);
+        cocheRally.setNivel(90);
+        cocheRally.setArrancado(true); 
+        cocheRally.acelerar();
+        System.out.println("Marca de Vehículo: " +  cocheRally.getMarca());
+        datosCocheRally=cocheRally.toString();
+        System.out.println(datosCocheRally);
+        
+        Coche supraNormal= cocheRally; 
+        //Conversion Implicita. Al reves no se puede. Un hijo puede tener la forma de su padre. 
+        supraNormal.explosionCilindro();
+        
+        CocheRally cr = (CocheRally)supraNormal; 
+        System.out.println("El Rozamiento es de: " + cr.getRozamiento());
+        
+        
          
+        
+        
     }
     
 }
