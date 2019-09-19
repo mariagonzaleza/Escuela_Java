@@ -45,9 +45,16 @@ public class TestStringAux {
          assertEquals(resultadoOk, resultadoAux); 
          StringAux texto3SinEsp = new StringAux(texto3); 
          resultadoAux= texto3SinEsp.getStr(); 
-         assertEquals(resultadoOk, resultadoAux); 
+         assertEquals(resultadoOk, resultadoAux);
+         //Expresiones regulares " + " el caracter anterior repetido 1 o mas veces 
+         //" \\s+"...
+       /*  @Test
+         public void ProbandoContarPalabras(){
+            assertEquals(5, StringAux.ContarPalabras("En un lugar de la mancha..."); 
+            assertEqueals(3, StrinAux.ContarPalabras("en un lugar"); 
+            }
          
-        }
+        }*/
        
 }
-
+}

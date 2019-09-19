@@ -1,45 +1,19 @@
 package ejemplojava;
+import POO.*; 
 /**
  * @author María Alejandra
  */
-public class Coche {
+public class Coche extends Vehiculo implements Rodable {
     
-    enum TipoColor{
-        BLANCO, NEGRO, ROJO, VERDE, AZUL, PLATEADO
-    }; //Blanco sería el elemento nº 0, negro el nº 1... etc 
-    //Tipo color sería equivalente a un int 
-    
-    enum TipoCarburante{
-        GASOLINA, DIESEL
-    };
-    
-    private final byte ruedas; //Como hemos definido en nuestro coche las ruedas como 4 es constate
-    private final String marca; 
-    public final int litros_deposito; //Capacidad
-    private float nivel_deposito; //Nivel de combustible
-    boolean arrancado; 
-    private TipoColor colores; //Colores disponibles para los coches.
-    private final TipoCarburante carburante; //Gasolina o Diesel 
-
-    
-    /*public Coche(){
-       
-    }*/
-    
-    public Coche(String marca, TipoCarburante carburante, TipoColor color){
-        ruedas=4; 
-        this.marca=marca; 
+    public Coche(String matricula,String marca, int litros_deposito, float nivel_deposito, boolean arrancado, TipoColor colores, TipoCarburante carburante ){
+        super(matricula,(byte) 4, marca, litros_deposito, nivel_deposito, arrancado); 
+        //Heredamos matricula, ruedas, marca, ..... de Vehiculo: 
+        this.colores= colores; 
         this.carburante=carburante; 
-        litros_deposito=80;
-        colores= color;    
     }
-    //CONSTRUCTOR PARA RECIBIR UN COLOR EN FORMA DE STRING EN VEZ DE PASARLO POR TIPOCOLOR
-     public Coche(String marca, TipoCarburante carburante, String color){
-        ruedas=4; 
-        this.marca=marca; 
-        this.carburante=carburante; 
-        litros_deposito=80;
-       
+    
+    public Coche(String matricula, String marca, int litros_deposito, float nivel_deposito, boolean arrancado, String colores, TipoCarburante carburante){
+         super(matricula, (byte) 4, marca, litros_deposito, nivel_deposito, arrancado);
        /* if (TipoColor.valueOf(color) == TipoColor.ROJO)
             this.colores=TipoColor.ROJO; 
         else if (TipoColor.valueOf(color) == TipoColor.BLANCO)
@@ -54,10 +28,47 @@ public class Coche {
             this.colores=TipoColor.PLATEADO;*/ //Forma 1 de hacerlo 
         //switch(color)
         //case "ROJO" : this.colores=TipoColor.ROJO....2º FORMA 
-        this.colores=TipoColor.valueOf(color); //3º PARSE 
-        
-                
+        this.colores=TipoColor.valueOf(colores); //3º PARSE 
+        this.carburante=carburante;     
     }
+
+    @Override
+    public void abrirPuerta() {
+        System.out.println("¡Abriendo Puertas del coche!");
+    }
+
+    @Override
+    public byte getNumruedas() {
+        return this.ruedas; 
+    }
+
+    @Override
+    public void moverse() {
+        System.out.println("Moviendose\n");
+        acelerar(); 
+        mostrarEstado();
+    }
+    
+    public enum TipoColor{
+        BLANCO, NEGRO, ROJO, VERDE, AZUL, PLATEADO
+    }; //Blanco sería el elemento nº 0, negro el nº 1... etc 
+    //Tipo color sería equivalente a un int 
+    
+    public enum TipoCarburante{
+        GASOLINA, DIESEL
+    };
+
+    public TipoColor colores; //Colores disponibles para los coches.
+    public final TipoCarburante carburante; //Gasolina o Diesel 
+
+    
+    /*public Coche(){
+       
+    }*/
+
+  
+    //CONSTRUCTOR PARA RECIBIR UN COLOR EN FORMA DE STRING EN VEZ DE PASARLO POR TIPOCOLOR
+  
     
     public void vaciarDeposito (Coche c){
         this.nivel_deposito= 3; 
@@ -67,13 +78,7 @@ public class Coche {
     public String toString(){
         return "Marca de Coche: " + marca + "Color: "+ this.colores.toString() + "Nivel Depósito actual: " + nivel_deposito;
     }
-    
-    public void acelerar(){
-    if(arrancado){
-        nivel_deposito -=0.1f; 
-        explosionCilindro(); 
-    }
-    }
+
     
     public void mostrarEstado(){
         System.out.println("Marca de Coche: " + marca + "Nivel Depósito actual: " +nivel_deposito);
@@ -120,13 +125,8 @@ public class Coche {
     protected void setNivDeposito(float nuevo_niv){
         this.nivel_deposito=nuevo_niv; 
     }
-
-    public void setArrancado(boolean arrancado) {
-        this.arrancado = arrancado;
-    }
+   
     
-    
-
 }
     
 
