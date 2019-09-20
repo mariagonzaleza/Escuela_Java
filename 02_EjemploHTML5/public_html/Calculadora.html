@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <form name="calc" id="calc" method="get" action="#">
+            <label>Calculadora </label>
+            <br/>
+            <input name="primerNumero" id="primerNum" type="number" min="1" max="9" />
+            <input name="segundoNumero" id="segundoNum" type="number" min="1" max="9"/>
+            <input type="button" id="boton1" value="Sumar" onclick="sumar()"/>
+            <script>
+                
+                var b1 = document.getElementById("primerNum"); 
+                var b2 = document.getElementById("segundoNum");
+                var b3 = document.getElementById("boton1"); 
+            
+              function sumar(){
+         
+                  valor=parseInt(b1.value)+parseInt(b2.value);
+                  window.alert("Resultado = " + valor); 
+              }
+              
+             
+            </script>
+        </form>
+        
+
+    </body>
+</html>

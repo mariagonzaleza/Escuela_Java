@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            function mifuncion (arg1, arg2){
+                document.write("<p> Arg 1" + arg1 + "</p>"); 
+                document.write("<p> Arg 2" + arg2 +"</p>"); 
+                if(arguments.length>2){
+                    for(arg in arguments)
+                        document.write("<h2>Arg: " + arg); 
+                    for(arg of arguments)
+                        document.write("<h2>Arg: " + arg); 
+                }        
+            }
+            mifuncion("Texto", 2000); 
+            mifuncion(new Object(), false); 
+            mifuncion("Argumento"); 
+            mifuncion("hola",100,null,2);
+            var otrafuncion=function(veces){
+                for (var i=0; i<veces; i++){
+                    document.write("<p> Veces: " + i + "</p>");
+                    }; 
+                
+            };
+            
+            otrafuncion.puessi="es un objeto"; 
+            otrafuncion(3); 
+            document.write(otrafuncion.puessi); 
+            var funcionrara= new Function("x", "y", "return x + y");
+            document.write("<p>" + funcionrara("x",5) + "</p>");
+            
+            
+        </script>
+    </body>
+</html>
