@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Mi Calculadora</title>
+        <title>Mi Calculadora 2</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -21,6 +21,7 @@ and open the template in the editor.
             <input type="button" id="boton2" value="-" onclick="restar()"/>
             <input type="button" id="boton3" value="x" onclick="multiplicar()"/>
             <input type="button" id="boton4" value="/" onclick="dividir()"/>
+            <input name="result" id="result" type="number"/>
             
             <script>
                 
@@ -30,23 +31,24 @@ and open the template in the editor.
                 var b4 = document.getElementById("boton2");
                 var b5 = document.getElementById("boton3");
                 var b6 = document.getElementById("boton4");
-            
+                var b7 = document.getElementById("result");
+                
               function sumar(){
          
                   valor=parseInt(b1.value)+parseInt(b2.value);
-                  window.alert("Resultado = " + valor); 
+                  b7.value= valor; 
               }
               function restar(){
                   valor=parseInt(b1.value)-parseInt(b2.value);
-                  window.alert("Resultado = " + valor); 
+                  b7.value = valor; 
               }
               function multiplicar(){
                   valor = parseInt(b1.value) * parseInt(b2.value); 
-                  window.alert("Resultado = " + valor); 
+                 b7.value = valor; 
               }
               function dividir(){
                   valor_d =parseInt(b1.value) / (parseInt(b2.value)); 
-                  window.alert("Resultado = " + valor_d); 
+                  b7.value = valor_d; 
               }
              
              

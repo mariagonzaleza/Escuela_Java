@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mi Calculadora 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Introduce 2 números y opera: </div>
+        <form name="calc" id="calc" method="get" action="#">
+            <label>Calculadora </label>
+            <br/>
+            <input type="button" id="uno" value="1" onclick="setValue(1)"/>
+            <input type="button" id="dos" value="2" onclick="setValue(2)"/>
+            <input type="button" id="tres" value="3" onclick="setValue(3)"/>
+            </br>
+            <input type="button" id="cuatro" value="4" onclick="setValue(4)"/>
+            <input type="button" id="cinco" value="5" onclick="setValue(5)"/>
+            <input type="button" id="seis" value="6" onclick="setValue(6)"/>
+            </br>
+            <input type="button" id="siete" value="7" onclick="setValue(7)"/>
+            <input type="button" id="ocho" value="8" onclick="setValue(8)"/>
+            <input type="button" id="nueve" value="9" onclick="setValue(9)"/>
+            </br>
+            <input type="button" id="suma" value="+" onclick="setValue('+')"/>
+            <input type="button" id="resta" value="-" onclick="setValue('-')"/>
+            <input type="button" id="mult" value="x" onclick="setValue('x')"/>
+            <input type="button" id="div" value="/" onclick="setValue('/')"/>
+            <input type="button" id="igual" value="=" onclick="calcular()">
+            <input name="result" id="result" type="text"/>
+            
+            <script>
+                
+                var b1 = document.getElementById("uno"); 
+                var b2 = document.getElementById("dos");
+                var b3 = document.getElementById("tres"); 
+                var b4 = document.getElementById("cuatro");
+                var b5 = document.getElementById("cinco");
+                var b6 = document.getElementById("seis");
+                var b7 = document.getElementById("siete");
+                var b8 = document.getElementById("ocho");
+                var b9 = document.getElementById("nueve");
+                var b10 = document.getElementById("suma");
+                var b11 = document.getElementById("resta");
+                var b12 = document.getElementById("mult");
+                var b13 = document.getElementById("div");
+                var b14 = document.getElementById("result");
+                var b15 = document.getElementById("igual"); 
+                
+                
+              function setValue(valor){
+                  b14.value+=("" + valor);
+ 
+              }
+              
+              function sumar(){
+                  
+                 
+              }
+              
+              function calcular(){
+                  
+                     if(b14.value.includes("+")){
+                         sumar();  
+                     } 
+        
+     
+                    
+              }
+              
+                
+              
+             
+            </script>
+        </form>
+        
+
+    </body>
+</html>
