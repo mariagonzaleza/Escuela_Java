@@ -49,6 +49,8 @@ class Calculadora {
             let valActual = parseFloat(this.result.val());
             let resultado = eval(this.mem.toString() + this.operador + valActual);
             this.result.val(resultado);
+            $("#anterior").css("background-color", "green");
+            $("#resultado").css("background-color", "blue");
         }
     }
 };

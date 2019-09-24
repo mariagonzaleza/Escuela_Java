@@ -44,7 +44,7 @@ public class TestStringAux {
          String resultadoAux= ""; 
          assertEquals(resultadoOk, resultadoAux); 
          StringAux texto3SinEsp = new StringAux(texto3); 
-         resultadoAux= texto3SinEsp.getStr(); 
+        // resultadoAux= texto3SinEsp.getStr(); 
          assertEquals(resultadoOk, resultadoAux);
          //Expresiones regulares " + " el caracter anterior repetido 1 o mas veces 
          //" \\s+"...
