@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { MiControlComponent } from './mi-control/mi-control.component';
 import {FormsModule} from '@angular/forms';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MiControlComponent,
-    HeroesListComponent
+    HeroesListComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
